@@ -15,7 +15,7 @@ url="$baseUrl/$fileName-$cpuArch.dmg"
 downloadPath="${RUNNER_TEMP}/$fileName-$cpuArch.dmg"
 echo "Downloading Unity Hub from $url to $downloadPath..."
 
-wget -qO "${downloadPath}" "${url}" || {
+curl -O "${downloadPath}" "${url}" || {
     echo "::endgroup::"
     echo "::error::Failed to download Unity Hub from $url"
     exit 1
